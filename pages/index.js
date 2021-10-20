@@ -1,8 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { getSortedPostsData } from '../lib/posts'
 import DefaultLayout, { siteTitle } from '../layouts/default/default'
+import Date from '../components/common/date/date'
+
 import utilStyles from '../styles/utils/utils.module.css'
 
-import { getSortedPostsData } from '../lib/posts'
+
 
 // TODO: vue에서는 middleware로 썼던것 같은데, 모듈로 분리하는 방법
 // getServerSideProps, getStaticProps
@@ -44,11 +48,13 @@ export default function Home({ allPostsData  }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>

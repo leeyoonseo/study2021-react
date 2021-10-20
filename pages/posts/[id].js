@@ -6,6 +6,12 @@ import Date from '../../components/common/date/date'
 import utilStyles from '../../styles/utils/utils.module.css'
 
 // https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data
+
+// * pages/categories/[id].js
+// ID가 지정된 특정 게시물을 가져오려면 `getStaticProps`를 사용
+// 가능한 모든 블로그 게시물을 가져오려면 `getStaticPaths`를 사용 
+
+
 // TODO: 순서 찾기
 export async function getStaticPaths() {
   const paths = getAllPostIds()
