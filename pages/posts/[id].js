@@ -8,6 +8,7 @@ import utilStyles from '../../styles/utils/utils.module.css'
 // https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data
 
 // * pages/categories/[id].js
+// - 직접 데이터베이스 쿼리와 같은 코드를 브라우저로 보내지 않고도 작성할 수 있기에 API 콜 금지
 // ID가 지정된 특정 게시물을 가져오려면 `getStaticProps`를 사용
 // 가능한 모든 블로그 게시물을 가져오려면 `getStaticPaths`를 사용 
 
